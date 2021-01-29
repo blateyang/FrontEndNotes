@@ -21,6 +21,9 @@
         flex: none;
         background-color: green;
       }
+      #mid:hover {
+        text-align: center;
+      }
       #mid2 {
         width: 80px;
         height: 30px;
@@ -66,6 +69,9 @@
     </div>
     <input id="inputSearch" type="search">
     <script>
+      const mid = document.getElementById("mid")
+      mid.addEventListener("pointerover", (event)=>{event.preventDefault()})
+      
       const showQuery = function(query) {
         console.log(query)
       }

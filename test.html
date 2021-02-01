@@ -3,7 +3,7 @@
   <head>
     <title>test</title>
     <style>
-      #content{
+      /* #content{
         width: 200px;
         height: 200px;
         background-color: gray;
@@ -51,7 +51,7 @@
       }
       .myDiv {
         flex: 1;
-      }
+      } */
     </style>
   </head>
   <body>
@@ -68,38 +68,40 @@
       <div class="aside">aside</div>
     </div>
     <input id="inputSearch" type="search">
+      <div></div>
     <script>
-      const mid = document.getElementById("mid")
-      mid.addEventListener("pointerover", (event)=>{event.preventDefault()})
+
+//       const mid = document.getElementById("mid")
+//       mid.addEventListener("pointerover", (event)=>{event.preventDefault()})
       
-      const showQuery = function(query) {
-        console.log(query)
-      }
-      let inputSearch = document.getElementById("inputSearch")
-      let timeout = null // 不能放在里面，否则在addEventListener里面调用时每次都会执行一遍
-      const debounce = (fn, time)=>{
-        return function() {
-          clearTimeout(timeout)
-          timeout = setTimeout(()=>{
-            fn.apply(this, arguments)
-          }, time)
-        }
-      }
-      let lastTime = (new Date()).getTime()
-      const throttle = (fn, time) => {
-        return function() {
-          let now = (new Date()).getTime()
-          if(now - lastTime >= time) {
-            fn.apply(this, arguments)
-            lastTime = now
-          }
-        }
-      }
-      inputSearch.addEventListener("keyup", function(event){
-//        showQuery(this.value)
-//          debounce(showQuery, 1000)(this.value)
-        throttle(showQuery, 500)(this.value)
-      })
+//       const showQuery = function(query) {
+//         console.log(query)
+//       }
+//       let inputSearch = document.getElementById("inputSearch")
+//       let timeout = null // 不能放在里面，否则在addEventListener里面调用时每次都会执行一遍
+//       const debounce = (fn, time)=>{
+//         return function() {
+//           clearTimeout(timeout)
+//           timeout = setTimeout(()=>{
+//             fn.apply(this, arguments)
+//           }, time)
+//         }
+//       }
+//       let lastTime = (new Date()).getTime()
+//       const throttle = (fn, time) => {
+//         return function() {
+//           let now = (new Date()).getTime()
+//           if(now - lastTime >= time) {
+//             fn.apply(this, arguments)
+//             lastTime = now
+//           }
+//         }
+//       }
+//       inputSearch.addEventListener("keyup", function(event){
+// //        showQuery(this.value)
+// //          debounce(showQuery, 1000)(this.value)
+//         throttle(showQuery, 500)(this.value)
+//       })
 
     </script>
   </body>

@@ -9,50 +9,66 @@
           </template><!--v2.6及以后的语法,插槽名采用-连接符命名法-->
         </todo-item>
       </todo-list>
+    {{count}}
+    <br>
+    {{$store.getters.doubleCount}}
+    <button @click="$store.commit('increment')">count++</button><!--对应mutations-->
+
+
   </div>
 </template>
 
 <script>
-import TodoItem from "./components/TodoItem.vue"
-// import TodoList from './components/TodoList.vue'
+// import TodoItem from "./components/TodoItem.vue"
+// // import TodoList from './components/TodoList.vue'
 
-export default {
-  name: 'App',
-  components: {
-    // TodoList,
-    TodoItem
-  },
-  data: function() {
-    return {
-          message: "hello world",
-          list: [
-            {
-              title: "课程1",
-              del: false
-            },
-            {
-              title: "课程2",
-              del: true
-            }
-          ]
-        }
-  },
-  methods: {
-    handleDelete(val) {
-      console.log("删除"+val)
-      let deleteId = -1
-      for(let i=0; i<this.list.length; i++) {
-        if(this.list[i].title === val) {
-          deleteId = i
-          break
-        }
-      }
-      if(deleteId > -1) {
-        this.list.splice(deleteId, 1)
+// export default {
+//   name: 'App',
+//   components: {
+//     // TodoList,
+//     TodoItem
+//   },
+//   data: function() {
+//     return {
+//           message: "hello world",
+//           list: [
+//             {
+//               title: "课程1",
+//               del: false
+//             },
+//             {
+//               title: "课程2",
+//               del: true
+//             }
+//           ]
+//         }
+//   },
+//   methods: {
+//     handleDelete(val) {
+//       console.log("删除"+val)
+//       let deleteId = -1
+//       for(let i=0; i<this.list.length; i++) {
+//         if(this.list[i].title === val) {
+//           deleteId = i
+//           break
+//         }
+//       }
+//       if(deleteId > -1) {
+//         this.list.splice(deleteId, 1)
+//       }
+//     }
+//   }
+// }
+
+
+  export default {
+    name: "app",
+    computed: {
+      count() {
+        return this.$store.state.count
       }
     }
   }
-}
 </script>
 
 <style>

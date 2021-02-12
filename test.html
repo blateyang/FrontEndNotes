@@ -68,9 +68,17 @@
       <div class="aside">aside</div>
     </div>
     <input id="inputSearch" type="search">
-      <div></div>
-    <script>
+      <canvas id="myCanvas"></canvas>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <rect style="fill: rgb(0, 0, 255); stroke-width: 1px; stroke: rgb(0, 0, 0);" height="[object SVGAnimatedLength]" width="[object SVGAnimatedLength]">
+      </rect>
+    </svg>
 
+    <script>
+      var c=document.getElementById("myCanvas");
+      var ctx=c.getContext("2d");
+      ctx.rect(20,20,150,100);
+      ctx.stroke();
 //       const mid = document.getElementById("mid")
 //       mid.addEventListener("pointerover", (event)=>{event.preventDefault()})
       

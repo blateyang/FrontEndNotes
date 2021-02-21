@@ -6,6 +6,7 @@
 1. CSS是一门样式规则语言，它的规则有哪几种类型？
 
 CSS的规则主要有两大类，@规则和普通规则。
+
 @规则用来设定样式表整体或条件规则组内的规则，根据@后面跟的标识符主要有以下几类：
 - @charset指定样式表使用的字符集
 - @import导入外部样式表
@@ -15,17 +16,18 @@ CSS的规则主要有两大类，@规则和普通规则。
   - @keyframses用于定义动画关键帧
   - @supports用于条件查询（满足给定条件则条件规则组里的规则生效）
   - 其它
+
 普通规则由选择器和声明语句构成，选择器分为元素选择器、id选择器、类选择器、属性选择器、伪类和伪元素选择器。这些选择器具有不同的优先级（id选择器>类和伪类选择器>元素和伪元素选择器）并可按照一定的组合顺序形成更复杂选择器，而声明语句则由属性和值构成的键值对组成。
 
 2. 什么是BFC？形成BFC的条件是什么？BFC有什么作用？
 
 BFC(block formating context)是块级格式上下文，属于格式上下文的一种（另一种是IFC(inline formating context)）。格式上下文是页面中的一块渲染区域，对应一套渲染规则，决定了子元素如何定位以及和其它子元素的相互作用。BFC和IFC的区别是相应规则不同，BFC的布局规则如下：
 
-1.内部的盒子会在垂直方向依次放置；
-2.盒子垂直方向的距离由margin决定， **属于同一个BFC的两个相邻Box的上下margin会发生重叠**；
-3.对于从左到右的布局，每个元素的左边，与包含的盒子的左边相接触，即使存在浮动也是如此；
-4.BFC的区域不会与float重叠；
-5.BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之也如此；
+1.BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之也如此；
+2.内部的盒子会在垂直方向依次放置；
+3.盒子垂直方向的距离由margin决定， **属于同一个BFC的两个相邻Box的上下margin会发生重叠**；
+4.对于从左到右的布局，每个元素的左边，与包含的盒子的左边相接触，即使存在浮动也是如此；
+5.BFC的区域不会与float重叠；
 6.计算BFC的高度时，浮动元素也参与计算。 
 
 IFC的布局规则要简单一些：
@@ -60,6 +62,7 @@ IFC的布局规则要简单一些：
 2.外容器弹性布局+左右栏固定宽+中间栏flex:1
 3.外容器grid布局并设置grid-template-columns:xxpx 1fr xxpx+左右栏固定宽
 4.双飞翼布局
+
 参考[CSS三栏布局几种常用方案](https://blog.csdn.net/Blateyang/article/details/109148239)
 
 5. 如何清除浮动
@@ -68,6 +71,7 @@ IFC的布局规则要简单一些：
 2.设置clearfix:after样式（clear:both;content:"";display:block)
 
 6. flex布局的设计思路和实现原理是怎样的？它解决了哪些问题？
+
 flex的设计思路是根据外容器的尺寸调整内部元素的尺寸达到充满整个容器的效果，flex布局容器内的flex项会沿着父容器flex-direction属性指定的主轴排列，沿着与主轴垂直的交叉轴进行布局调整。实现原理分3步：
 1.分行（指定了flex-wrap属性为超出换行）
 2.计算主轴各flex项的位置和宽度（在flex-basis的基础上根据各flex项的缩放比例调整）
@@ -93,7 +97,9 @@ flex的设计思路是根据外容器的尺寸调整内部元素的尺寸达到�
 9. CSS动画的理解和相关API的区别？
 
 CSS动画允许在多个关键帧之间进行状态（元素的行为和外观）的改变。它主要涉及transiton和animation两个API。
+
 transition用于指定从一种转态到另一种状态的样式过渡规则，关注的是样式属性，有四个配置属性transition-property,transition-duration,transition-timing-function和transition-delay
+
 animation用于在不同关键帧上设置多个过渡点，关注的更多是元素整体的状态，简单理解的话一个animation可以由多个transition组成，因此animation可以对动画进行更加精确灵活的控制。animation有8个配置属性，除了与transition类似的duration,timing-function,delay还有animation-direction,animation-iteration-count,animation-name（由@keyframe定义的关键帧名），animation-fill-mode（指定动画播放前后应用的样式)和animation-play-state
 
 详细用法可参考[CSS3（二） Transition & Animation](https://blog.csdn.net/u013243347/article/details/79943045)

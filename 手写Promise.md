@@ -175,7 +175,6 @@ then的两个回调函数是否也返回Promise做不同处理
   then(onFulfilled, onRejected) {
     const self = this // 保存现有的Promise对象
     return new Promise((resolve, reject)=>{
-      setTimeout(()=>{ // then是微任务，用setTimeout模拟
         if(self.status === FULFILLED) {
           setTimeout(()=>{
             try{
@@ -220,7 +219,6 @@ then的两个回调函数是否也返回Promise做不同处理
             })            
           })
         }
-      })
     })
   }
 ```
@@ -295,3 +293,5 @@ static race(promiseArr) {
   })
 }
 ```
+
+参考[详细的Promise源码实现，再被面试问到轻松解答](https://juejin.cn/post/6860037916622913550）

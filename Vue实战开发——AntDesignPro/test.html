@@ -22,6 +22,7 @@
       <div>firstName: <input type="text" v-model="firstName"></div>
       <div>lastName: <input type="text" v-model="lastName"></div>
       <div>age: <input type="text" v-model="info.age"></div>
+      {{info.age}}
     </div>
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
     <script src="../../VueProjects/vue2.6.js"></script>
@@ -106,10 +107,10 @@
             this.fullName = this.firstName + " " + newVal
           },
           info: {
-            handler: function(val, oldVal) {
-              console.log("new: %s, old: %s", val, oldVal)
+            handler: function(newVal) { 
+              console.log("newVal", newVal["age"])
             },
-            deep: true
+            deep: true // deep为false则监测不到info内部属性的变化，无打印
           }
         },
         methods: {

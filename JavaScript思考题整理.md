@@ -54,7 +54,7 @@ Symbol是ES6新增的一种基本类型，用来表示非字符串的对象key�
 “面向对象”和“基于对象”都实现了“封装”的概念，但是面向对象还实现了“继承和多态”，而“基于对象”没有实现这些。js虽然没有采用基于类的继承机制，但其使用了基于原型的继承机制，因此是面向对象的
 6. 为什么在js中可以给对象自由添加属性，而其它的语言却不能？
 
-js可以动态添加属性是因为基于原型的系统更多地与高动态语言配合且提倡运行时的原型修改，js为了实现动态性而被刻意设计成这样
+js可以动态添加属性是因为js是一门高动态语言，为了实现高动态特性而被刻意设计成可以在运行时给对象添改属性
 7. js中我们需要模拟类吗？
 
 在ES6中不需要，因为ES6提供的class和extends语法可以模拟基于类的面向对象范式（本质还是基于原型运行时的语法糖，类方法定义在原型上，继承则通过以原型对象的拷贝为原型并调整prototype.constructor的指向实现）
@@ -68,7 +68,7 @@ function Child(name) {
   this.type = "children"
 }
 
-Child.prototype = Object.create(Child.prototye)
+Child.prototype = Object.create(Parent.prototye)
 Child.prototype.constructor = Child
 
 Child.prototype.greet = function() {
@@ -139,3 +139,16 @@ this是用来携带执行环境上下文的，它的指向由执行环境上下�
     - async函数声明
     - generator函数声明
     - async generator函数声明
+
+6. js的垃圾回收机制是怎样的
+js的内存管理是通过V8引擎自动管理的，实现机制是垃圾回收，早期采用的是引用计数策略，但因会产生循环引用问题后面改为采用标记清除策略。具体来说，V8引擎的垃圾回收分为新生代和老生代。
+- 新生代：主要使用Scavenge进行管理，主要实现是cheney算法，用来对低频只被使用一次的变量进行垃圾回收。cheney算法将内存均分为2块空间：使用空间叫From，闲置空间叫True。新变量先分配到From空间，在空间快要被占满时将存活变量复制到To空间，然后清空From空间，之后调换From空间和To空间，继续进行内存分配。当变量被多次从From空间复制到To空间或者To空间的已用容量超过阈值，新生代会晋升为老生代。
+- 老生代：结合使用Mark-Sweep和Mark-Compact算法对被高频使用的变量进行垃圾回收。Mark-Sweep算法在标记阶段遍历内存中的所有变量并标记需要被清理的变量（离开作用域的且不再被引用的变量），然后在清理阶段对被标记的变量进行清除。Mark-Sweep的缺点是标记清除后会产生内存碎片，而Mark-Compact算法可以避免产生碎片，Mark-Compact在标记完变量后会将它们归集在一片内存连续区域集中进行清理，不过因为涉及到大量的变量搬移，比较耗时。所以还是以使用Mark-Compact算法为主，当内存碎片过多导致内存不够再使用Mark-Compact算法整理。
+
+7. 解释下面代码的结果并说明原因
+```js
+  function test() {
+    console.log(test.prototype.constructor.constructor)
+  }
+```
+答：test.prototype.constructor 指向函数自身，是Function的一个实例，它自身是没有constructor属性的，因此会上溯原型链，找到它的原型，也即Function.prototype，而Function.prototype.constructor就是Function

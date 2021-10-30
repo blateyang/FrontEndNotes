@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <title>Resume</title>
+  <style>
+    p {
+      font-size: 6px;
+    }
+
+    body {
+      display: flex;
+    }
+
+    aside {
+      width: 180px;
+      background-color: #201c1c;
+      color: #55bae4;
+      padding-left: 10px;
+    }
+    aside .info div{
+      display: flex;
+      align-items: center;
+    }
+    aside h2 {
+      font-size: 15px;
+    }
+    /* aside .other {
+      position: absolute;
+      bottom: 0;
+    } */
+
+    header, .company-job {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .company-job, .project-name {
+      font-weight: bold;
+    }
+
+    header {
+      height: 40px;
+    }
+
+    #avator {
+      display: flex;
+      justify-content: center;
+      height: 300px;
+    }
+    #avator img {
+      width: 150px;
+    }
+
+    .school {
+      display: flex;
+      align-items: center;
+      height: 36px;
+    }
+    .school p {
+      flex: 1 1 200px;
+      text-align: center;
+    }
+    .school :first-child {
+      text-align: left;
+    }
+    .school :last-child {
+      text-align: right;
+    }
+
+    .grade-info p {
+      margin: 0;
+    }
+
+    .job-desc p {
+      margin: 0;
+      text-align: justify;
+    }
+
+
+    main {
+      flex: 1;
+      margin: auto 10px;
+    }
+
+    section h2 {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      margin: 0 auto;
+      color: #55bae4;
+    }
+    section h2 p {
+      border-bottom: 2px solid;
+      flex: 1;
+      font-size: 20px;
+    }
+    
+    ul {
+      list-style-type: disc;
+      margin: 8px;
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <div class="info">
+      <div id="avator"><img src="avator.jpg" alt=""></div>
+      <div><i class="fa fa-home" aria-hidden="true"></i><p>地址：广东省广州市</p></div>
+      <div><i class="fa fa-phone" aria-hidden="true"></i><p>电话：18320709790</p></div>
+      <div><i class="fa fa-envelope-open" aria-hidden="true"></i><p>blateyang@163.com</p></div>
+      <div><i class="fa fa-pencil-square" aria-hidden="true"></i><p>blog.csdn.net/Blateyang</p></div>
+      <div><i class="fa fa-github" aria-hidden="true"></i><p>github.com/blateyang</p></div>
+    </div>
+    <div class="other">
+      <div class="certificate">
+        <h2>获得证书</h2>
+        <ul>
+          <li><p>CET6</p></li>
+          <li><p>计算机等级考试四级网络工程师</p></li>
+        </ul>
+      </div>
+      <div class="self-assement">
+        <h2>自我评价</h2>
+        <ul>
+          <li><p>热爱学习，对前端开发有深入研究的兴趣</p></li>
+          <li><p>认真负责，有较强的责任心</p></li>
+        </ul>
+      </div>
+      <div class="interest">
+        <h2>兴趣爱好</h2>
+        <ul>
+          <li><p>打篮球</p></li>
+          <li><p>投资理财</p></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  <main>
+    <header>
+      <h1 id="name">杨光俊</h1>
+      <h3 id="job-intent">求职意向：前端开发工程师</h3>
+    </header>
+    <section id="education">
+      <h2><i class="fa fa-graduation-cap" aria-hidden="true"></i><p>教育背景</p></h2>
+      <div class="eduaction-item">
+        <div class="school">
+          <p>2016.09-2019.06</p>
+          <p>华南理工大学</p>
+          <p>电子与通信工程</p>
+          <p>工程硕士</p>
+        </div>
+        <div class="grade-info"><p><strong>成绩信息：</strong>2次一等学业奖学金，1次二等学业奖学金</p></div>
+      </div>
+      <div class="eduaction-item">
+        <div class="school">
+          <p>2012.09-2016.06</p>
+          <p>长安大学</p>
+          <p>通信工程</p>
+          <p>工学学士</p>
+        </div>
+        <div class="grade-info"><p><strong>成绩信息：</strong>3次国家励志奖学金，成绩排名3/70</p></div>
+      </div>
+    </section>
+    <section id="job-experience">
+      <h2><i class="fa fa-address-card" aria-hidden="true"></i><p>工作经历</p></h2>
+      <ul>
+        <li class="job-item">
+          <div class="company-job">
+            <p>中国电子科技集团公司第七研究所（2019.07-至今）</p> 
+            <p>软件设计师</p>
+          </div>
+          <div class="job-desc">
+            <p><strong>工作描述：</strong>在职期间因项目需要，用2个月左右的时间从零开始自学Java和前端基础，并接手离职同事的IMS（IP多媒体子系统）运维管理系统的维护
+              和二次开发工作。前期使用HTML、JSP、jQuery等前端技术和Servlet、Hibernate等JavaWeb技术对IMS运维管理系统进行维护和二次开发，
+              后发现因项目所用技术老旧，前后端紧耦合，难以维护，在同事的指导下采用前后端分离的架构，对旧有系统进行重构。将前端JSP页面全部
+              用H5和jQuery重写，后端使用开发效率更高的SpringMVC框架代替旧系统使用的Strust2框架，将后台服务统一封装成RESTful接口，并使用
+              Ajax技术实现前后端的数据交互，在增强系统可维护性的同时，将整体代码量减少了30%。</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section id="project-experience">
+      <h2><i class="fa fa-users" aria-hidden="true"></i><p>项目经历</p></h2>
+      <ul>
+        <li class="project-item">
+          <div class="project-name">
+            <p>仿故宫电商小程序开发(2021.08.20-2021.09.20)</p>
+          </div>
+          <div class="project-desc">
+            <p><strong>项目描述：</strong>该项目是个人学习项目，目标是模仿“故宫宫廷文化”小程序的UI和功能，实现商品分类浏览页面和购物车页面的相关功能</p>
+          </div>
+          <div class="project-resp">
+            <p><strong>项目职责：</strong>使用vtabs小程序扩展组件实现商品分类浏览页面的侧边栏导航功能；实现商品详情页的多规格选取功能；实现微信自动登录功能；
+              实现购物车页面的商品编辑功能；实现订单确认页面的收货地址编辑和选取功能以及下单支付功能；实现电商小程序的后端接口</p>
+            <!-- <ul>
+              <li><p>深入学习浏览器的工作原理，对浏览器发送请求、解析响应、生成DOM树、计算CSS、排版和渲染等关键环节进行代码实现</p></li>
+              <li><p>掌握利用有限状态机对字符串进行词法分析的方法</p></li>
+            </ul> -->
+          </div>
+          
+        </li>
+        <li class="project-item">
+          <div class="project-name">
+            <p>跨端轮播图组件开发(2021.05.20-2021.06.20)</p>
+          </div>
+          <div class="project-desc">
+            <p><strong>项目描述：</strong>该项目是参加极客大学前端进阶训练营的实践项目，任务是开发一个支持鼠标和触摸操控、具有自动轮播和手动
+              轮播功能的跨端轮播图组件，项目演示地址为https://codepen.io/blateyang/pen/poeYBEq</p>
+          </div>
+          <div class="project-resp">
+            <p><strong>项目职责：</strong>基于createElement函数实现基础的支持jsx的组件框架；在组件框架基础上实现具有自动和手动轮播功能的轮播图组件；
+            建立基础的手势库让轮播图组件同时支持鼠标和触摸操控；利用时间线和动画对轮播图组件进行状态管理，实现自动和手动轮播的自然过渡</p>
+            <!-- <ul>
+              <li><p>深入学习浏览器的工作原理，对浏览器发送请求、解析响应、生成DOM树、计算CSS、排版和渲染等关键环节进行代码实现</p></li>
+              <li><p>掌握利用有限状态机对字符串进行词法分析的方法</p></li>
+            </ul> -->
+          </div>
+          
+        </li>
+        <li class="project-item">
+          <div class="project-name">
+            <p>基于toy-vue的井字棋游戏开发(2021.01.01-2021.02.01)</p>
+          </div>
+          <div class="project-desc">
+            <p><strong>项目描述：</strong>学习编写了一个简易vue框架——toy-vue，并基于该框架开发井字棋游戏，项目地址为https://blateyang.gitee.io/toy-vue</p>
+          </div>
+          <div class="project-resp">
+            <p><strong>项目职责：</strong>在toy-vue中，对Vue3的reactive API、模板解析进行简单实现，并基于toy-vue完成具有人机对弈功能的井字棋游戏的开发</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="professional-skill">
+      <h2><i class="fa fa-wrench" aria-hidden="true"></i><p>专业技能</p></h2>
+      <ul>
+        <li>
+          <p><strong>HTML、CSS：</strong>熟悉HTML的语法和常用标签，了解HTML5的新特性；熟悉常用的@规则和各种选择器，会计算选择器的specificity，
+          熟悉常用的CSS布局并对flex弹性布局原理有深入的理解，掌握CSS动画、BFC和IFC的使用
+          </p>
+      </li>
+      </ul>
+      <ul>
+        <li>
+          <p><strong>JavaScript：</strong>构建了相对完整的JavaScript知识体系，掌握常用语句和语法结构的用法，熟悉JavaScript的预处理机制和类型系统，理解事件循环机制，
+            掌握Promise、async/await和函数闭包的使用，会判断函数中this的指向
+          </p>
+      </li>
+      </ul>
+      <ul>
+        <li>
+          <p><strong>函数库和框架：</strong>熟悉ajax、jQuery、Vue的使用，对Vue的实现原理有深入的理解，会使用Node.js，了解React
+          </p>
+      </li>
+      </ul>
+      <ul>
+        <li>
+          <p><strong>工程化：</strong>会使用webpack配置和管理项目，打包项目的静态模块，了解webpack打包静态模块的原理，熟悉git的使用
+          </p>
+      </li>
+      </ul>
+      <ul>
+        <li>
+          <p><strong>其它：</strong>熟悉浏览器的请求和渲染原理，熟悉HTTP/TCP协议以及常用的MySQL和Linux命令，有JavaWeb后端开发和微信小程序开发经验
+          </p>
+      </li>
+      </ul>
+    </section>
+    <!-- <section class="self-assement">
+      <h2><i class="fa fa-user-circle-o" aria-hidden="true"></i><p>自我评价</p></h2>
+      <ul>
+        <li><p>热爱学习，对前端开发有深入研究的兴趣，曾通过自学利用HTML/CSS/JavaScript写过一个网页小游戏，访问地址https://blateyang.github.io</p></li>
+        <li><p>认真负责，有较强的责任心</p></li>
+      </ul>
+    </section> -->
+  </main>
+</body>
+</html>

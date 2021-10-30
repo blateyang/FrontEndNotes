@@ -46,7 +46,28 @@ sessionStorage.clear();
 - Cookie: 它是服务器发送到用户浏览器并保存到本地的一小块数据，这块数据会在浏览器下次访问相同服务器时被携带上，用于告知服务器两次请求是否来自同一浏览器，可用来进行会话状态管理和跟踪用户行为。可使用`document.cookie`获取当前网页的cookie，使用`document.cookie="key=keyValue"`给当前cookie添加键值对
 
 参考[MDN WebStorage API](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API),[MDN document.cookie](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie)
+<<<<<<< HEAD
 
+=======
+2. HTML有哪几类标签？
+- 语义类标签：标签本身带有一定的语义，如`header`,`footer`,`p`,`h1~h6`
+- 元(meta)信息标签：用于描述文档自身信息的标签，如`head`,`title`,`meta`
+- 链接类标签：产生超链接或链接外部资源的标签，`link`,`a`,`area`
+- 替换类标签：将对应的资源替换标签本身，如`script`,`video`,`radio`,`img`等媒体类标签和`iframe`
+
+3. H5的新特性有哪些？
+- 增加了更多的语义化标签，如`header`,`footer`,`nav`
+- 表单类：增加了更多的表单部件，如`datalist`;给input标签增加了更多的type，如number,date,url；给input标签增加了更多的属性，如placeholder,required
+- 媒体类：增加了`video`和`radio`，还有canvas绘画API
+- 事件类：增加了拖拽和释放(drag and drop)API; 增加了ondrag,onresize,onscroll等事件
+- 存储类：localStorage和sessionStorage
+- 通信类：单个TCP连接上进行全双工通信的webSocket
+
+参考[https://www.cnblogs.com/ainyi/p/9777841.html](https://www.cnblogs.com/ainyi/p/9777841.html)
+
+4. 什么是H5以及如何书写H5?
+H5是HTML的新标准，其设计目标是无需任何额外的插件（flash等）就可以传输所有内容，由万维网联盟(W3C)和WHATWG（Web Hypertext Application Technology Working Group，Web超文本应用技术工作组）合作创建。书写H5需要在html文件开头使用`<!DOCTYPE html>`声明。
+>>>>>>> 7f96d74abdfe63358014159e06f3a8a3672ecbe4
 
 5. 链接类标签有哪些？它们之间的区别是什么？
 链接类标签有link,a,area。
